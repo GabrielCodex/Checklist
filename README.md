@@ -27,4 +27,7 @@
 - Controller: Is an object that connects the data to the views. Know as the view controller
 
 - view: is something that draws something on screen such as a button or label 
-:
+
+- A good object-oriented design principle is to let objects change there own states as much as possible!! 
+
+
