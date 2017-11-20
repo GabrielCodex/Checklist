@@ -48,6 +48,8 @@ class ChecklistTableViewController: UIViewController {
         tableview.dataSource = self
         tableview.delegate = self
         
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         // Do any additional setup after loading the view.
     }
     
@@ -99,6 +101,19 @@ extension ChecklistTableViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        // 1
+        
+        items.remove(at: indexPath.row)
+        
+        //2
+        
+        let indexPaths = [indexPath]
+        tableview.deleteRows(at: indexPaths, with: .automatic)
+    }
+    
+    
     func configureCheckmark(for cell: UITableViewCell,
                             with item: ChecklistItem) {
         
@@ -115,5 +130,25 @@ extension ChecklistTableViewController: UITableViewDelegate, UITableViewDataSour
             label.text = item.text
         }
     }
+    
+    @IBAction func addItem(){
+        let newRowItem = items.count
+        
+        
+        let item: ChecklistItem = ChecklistItem()
+        item.text = "New Row"
+        item.checked = true
+        items.append(item)
+        
+        // Finds the index path based on the how many items are in the array then inserts the new row
+        let indexPath = IndexPath(row: newRowItem, section: 0)
+        let indexPaths = [indexPath]
+        tableview.insertRows(at: indexPaths, with: .right)
+        
+        
+        
+        
+    }
+    
     
 }

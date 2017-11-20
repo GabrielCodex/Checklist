@@ -1,10 +1,8 @@
 # Checklist
 
 ## Starting on Checklist App
-
-- Make tableview
-- 
-## TableView
+ 
+## TableView Notes
 
 - Tables display data in cells
 - When a row is no longer displayed on screen the cell is reused
@@ -30,4 +28,20 @@
 
 - A good object-oriented design principle is to let objects change there own states as much as possible!! 
 
+## NavigationController
 
+- The below line makes the title large.
+
+“Note: Apple does not recommend using large titles for all of your screens. Rather, their recommendation is to use large titles on your main screen and any other subsequent screens where it might make sense to have a prominent title. You will learn how to turn off large titles for secondary views later on.”
+
+Excerpt From: “iOS Apprentice.” iBooks.
+```swift
+
+navigationController?.navigationBar.prefersLargeTitles = true
+```
+## Deallocated
+- When a reference goes away or an object is destoryed then that memory because available again.
+
+## Automatic Reference Counting
+
+- ARC manages the lifetime of the objects in your app
