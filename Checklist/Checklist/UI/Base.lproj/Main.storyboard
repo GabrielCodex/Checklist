@@ -54,7 +54,7 @@
                     <navigationItem key="navigationItem" title="Checklist" id="hkY-zb-ajF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="G5q-A3-HG2">
                             <connections>
-                                <segue destination="v0o-yp-lcq" kind="show" id="KC9-bD-YKz"/>
+                                <segue destination="vLt-kX-UIh" kind="show" id="Nqr-SD-kHX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,53 +67,44 @@
             <point key="canvasLocation" x="882" y="132"/>
         </scene>
         <!--Add Item-->
-        <scene sceneID="xBI-tP-YCe">
+        <scene sceneID="KLu-NJ-dfv">
             <objects>
-                <viewController id="v0o-yp-lcq" customClass="AddItemTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aXg-JK-ffe">
+                <tableViewController id="vLt-kX-UIh" customClass="AddTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mj9-JJ-cGa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QUj-zU-TUR">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2sg-S1-SQv">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2sg-S1-SQv" id="brt-8E-miY">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="QUj-zU-TUR" firstAttribute="leading" secondItem="vg8-5R-ber" secondAttribute="leading" id="A4Q-EI-bFY"/>
-                            <constraint firstItem="vg8-5R-ber" firstAttribute="trailing" secondItem="QUj-zU-TUR" secondAttribute="trailing" id="b64-wG-ncQ"/>
-                            <constraint firstItem="vg8-5R-ber" firstAttribute="bottom" secondItem="QUj-zU-TUR" secondAttribute="bottom" id="mL1-DX-akQ"/>
-                            <constraint firstItem="QUj-zU-TUR" firstAttribute="top" secondItem="vg8-5R-ber" secondAttribute="top" id="uCS-Uo-KQP"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="vg8-5R-ber"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="ATp-lL-dmh">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Wb1-nK-h92">
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ezu-2u-EKV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ezu-2u-EKV" id="qg9-Sx-mGU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vLt-kX-UIh" id="PVP-Cz-iAe"/>
+                            <outlet property="delegate" destination="vLt-kX-UIh" id="8tN-Ji-Wjt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Add Item" id="g5h-r2-ewF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Cxd-LY-Lln">
                             <connections>
-                                <action selector="cancel" destination="v0o-yp-lcq" id="mGR-Gg-K7d"/>
+                                <action selector="cancel" destination="vLt-kX-UIh" id="RUd-jK-9tZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="8rD-vb-X7p">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AMF-dw-asf">
                             <connections>
-                                <action selector="done" destination="v0o-yp-lcq" id="zjc-wc-0Wy"/>
+                                <action selector="done" destination="vLt-kX-UIh" id="4ux-3m-gOQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kTG-a3-cd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ai-4r-QPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="130"/>
+            <point key="canvasLocation" x="1718" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3LQ-wr-Yih">
