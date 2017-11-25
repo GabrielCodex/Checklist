@@ -18,6 +18,19 @@
     }
 
 ```
+
+- The below method prevents the user from selecting the cell by returning nil/
+
+```swift
+
+override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        return nil
+    }
+```
+
+It is also a good idea to turn off the tableview color selection property. Go to the Attributes inspector  and set the Selection to none.
+
 ## MVC
 
 - Model: Contains your data and any operations on the data
@@ -45,3 +58,5 @@ navigationController?.navigationBar.prefersLargeTitles = true
 ## Automatic Reference Counting
 
 - ARC manages the lifetime of the objects in your app
+
+

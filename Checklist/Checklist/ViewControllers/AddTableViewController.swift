@@ -10,10 +10,14 @@ import UIKit
 
 class AddTableViewController: UITableViewController {
 
+    @IBOutlet private weak var textField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.largeTitleDisplayMode = .never
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -21,6 +25,14 @@ class AddTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        textField.becomeFirstResponder()
+        
+    }
+    
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,21 +41,31 @@ class AddTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
+    
+    // By returning nil. It prevents the user from selecting the cell
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        return nil
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+    
     
     @IBAction func cancel() {
         navigationController?.popViewController(animated: true)
     }
     
     @IBAction func done() {
+        
+
+        print("Hey The textfield says \(textField.text!)")
         navigationController?.popViewController(animated: true)
     }
 

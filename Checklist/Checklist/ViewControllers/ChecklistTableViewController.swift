@@ -16,12 +16,12 @@ class ChecklistTableViewController: UIViewController {
         
         
         let row0item = ChecklistItem()
-        row0item.text = "Pay bills"
+        row0item.text = "Text Lena"
         row0item.checked = false
         items.append(row0item)
         
         let row1item = ChecklistItem()
-        row1item.text = "Walk the dog"
+        row1item.text = "Buy a dog"
         row1item.checked = true
         items.append(row1item)
         
