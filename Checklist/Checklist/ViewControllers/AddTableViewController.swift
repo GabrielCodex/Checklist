@@ -8,14 +8,17 @@
 
 import UIKit
 
-class AddTableViewController: UITableViewController {
+class AddTableViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet private weak var textField: UITextField!
+    @IBOutlet private weak var doneBarButton: UIBarButtonItem!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         navigationItem.largeTitleDisplayMode = .never
         
 
@@ -69,6 +72,11 @@ class AddTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
 
+    
+    
+    // MARK: - Textfield Delegate Method
+    
+   
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
