@@ -6,6 +6,7 @@
 
 - Tables display data in cells
 - When a row is no longer displayed on screen the cell is reused
+- Static cells CAN ONLY be used with a Tableview Object
 
 ## TableView Delegate methods
 
